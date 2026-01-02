@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>collaspible_acordion_component</title>
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .active {
+      display: block !important;
+    }
+
+    .myText {
+      display: none;
+    }
+
+    .title {
+      font-size: 1.5em;
+      background-color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="title">
+      Number one
+    </div>
+    <div class="myText">
+      ifeanyi
+    </div>
+    <div class="title"> Number two
+
+    </div>
+    <div class="myText">
+      omego
+    </div>
+    <div class="title">
+      Number three
+    </div>
+    <div class="myText">
+      odogwu
+    </div>
+
+  </div>
+
+  <script>
+
+    let allOfTitle = document.querySelectorAll(".title");
+    let allOfMytext = document.querySelectorAll(".myText");
+
+
+    function removeAllActive() {
+      allOfMytext.forEach(text => text.classList.remove("active"));
+    }
+
+    allOfTitle.forEach((i) => {
+      i.addEventListener("click",
+        function () {
+          let a = i.nextElementSibling;
+          removeAllActive();
+          a.classList.toggle("active");
+          //a.classList.remove("active");
+        })
+    });
+
+
+  </script>
+</body>
+
+</html>

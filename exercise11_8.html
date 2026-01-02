@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <input type="text" name="ify" value="" onpaste="showPaste()">
+  <input type="text" name="ify" value="" onpaste="showPaste()">
+
+  <button type="" class="output"></button>
+
+
+  <script>
+
+    let output = document.querySelector(".output");
+    let eles = document.querySelectorAll("input[name ='ify']")
+
+    eles.forEach(function (x) {
+      x.addEventListener("keydown", function (keydown) {
+
+        if (!(isNaN(keydown.target.value))) {
+          output.textContent = keydown.target.value
+        }
+      })
+
+      x.addEventListener("keyup", function (keyup) {
+        console.log(keyup.target.value);
+      })
+    })
+    function showPaste() {
+      console.log("paste");
+    }
+  </script>
+</body>
+
+</html>

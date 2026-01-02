@@ -1,0 +1,32 @@
+<html>
+  <style>
+  .hide{
+
+  display:none
+
+  }
+  </style>
+<body>
+  
+
+<form id="signupForm">
+    <h3>Create Account</h3>
+    
+    <input type="text" name="email" placeholder="Email">
+    <span class="error hideE">Invalid Email</span><br>
+
+    <input type="password" name="password" placeholder="Password">
+    <span class="error hideP">Pass: 3-8 chars, letters/nums only</span><br>
+
+    <div class="captcha-box" style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+        <span class="val1"></span> + <span class="val2"></span> = ?
+        <input type="text" name="captchaAnswer" placeholder="Answer here" style="width: 50px;">
+        <span class="error hideM">Math Incorrect!</span>
+    </div>
+
+    <button type="submit">Register</button>
+    <div class="message"></div>
+</form>
+
+    </body>
+</html>

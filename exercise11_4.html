@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <div class="test">
+
+  </div>
+
+  <script>
+
+    let stest = document.getElementsByClassName("test");
+
+    let ele = stest[0];
+    ele.textContent = "Hello World";
+
+
+    function handle(color, event) {
+
+      console.log(color);
+      console.log(event)
+
+
+    }
+
+    ele.addEventListener("mousedown", function (elem) {
+      handle("red", elem)
+    })
+
+  </script>
+</body>
+
+</html>

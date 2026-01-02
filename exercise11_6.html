@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <script>
+
+    let output = document.querySelector(".output1")
+
+
+
+    let input1 = document.querySelector("input[name = 'first']")
+
+    let input2 = document.querySelector("input[name = 'last']")
+
+    function seperate() {
+      output.textContent = `${input1.value}  ${input2.value}`
+
+    }
+
+    input1.addEventListener("change", seperate);
+    input2.addEventListener("change", seperate);
+
+
+    function logEvent(event) {
+      console.log(event.type);
+    }
+
+
+    input1.addEventListener("focus", logEvent);
+    input1.addEventListener("blur", logEvent);
+    input2.addEventListener("focus", logEvent);
+    input2.addEventListener("blur", logEvent);  
+  </script>
+</body>
+
+</html>

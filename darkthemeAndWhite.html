@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>changeBackgroundColor</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <div>
+    Click me to see the changes
+  </div>
+
+  <script>
+
+    let black = false;
+    window.onclick = function changeBackgroundColor() {
+
+      console.log("kway")
+
+
+      if (black === false) {
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        black = true;
+      }
+      else {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+
+        black = false;
+      }
+
+    }
+
+  </script>
+</body>
+
+</html>

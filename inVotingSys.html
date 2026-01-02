@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>inVotingSys</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="message">Interactive voting System</div>
+  <div>
+    <input type="text" name="" value="" id="addFriend">
+    <input type="button" name="" value="add Friend" id="addNew">
+  </div>
+  <table id="output">
+
+  </table>
+
+
+  <script>
+    let myArray = [];
+
+    let message = document.getElementById("message");
+    let visuals = document.getElementById("addFriend");
+    let button = document.getElementById("addNew");
+    let table = document.getElementById("output");
+
+
+    button.addEventListener("click", () => {
+      let valurClicked = visuals.value;
+
+      myArray.push({name: valurClicked, vote: 0});
+
+      buildPage();
+      visuals.value = " ";
+    })
+    function buildPage() {
+      let voteCount = 0;
+      let view = " ";
+      myArray.forEach((x, index) => {
+        view += ` <tr onclick="voteinc(${index})">
+<td> ${index + 1}</td>
+<td> ${x.name}</td>
+
+<td   id="ify${index}"> ${x.vote}</td>
+
+
+</tr>`
+      })
+
+      table.innerHTML = view;
+
+    }
+    function voteinc(x) {
+      myArray[x].vote++
+      buildPage()
+      /*let number = document.getElementById(`ify${x}`);
+      number.textContent = Number(number.textContent) + 1;*/
+
+    }
+
+
+  </script>
+</body>
+
+</html>

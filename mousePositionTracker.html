@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mousePositionTracker</title>
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    .mouse {
+      height: 600px;
+      width: 400px;
+      background-color: greenyellow;
+    }
+
+    .active {
+      background-color: red;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div class="mouse">
+
+  </div>
+
+  <div id="output">
+
+  </div>
+
+  <script>
+    let mouse = document.querySelector(".mouse");
+    let output = document.getElementById("output");
+
+
+    mouse.addEventListener("mouseover", function () {
+      mouse.classList.add("active")
+    })
+
+    mouse.addEventListener("mouseout", function () {
+      mouse.classList.remove("active")
+    })
+
+    mouse.addEventListener("mousemove", function (e) {
+      let x = e.clientX
+      let y = e.clientY
+
+      output.textContent = `X coordinates = ${x}  Y coordinates = ${y}`
+
+    })
+  </script>
+</body>
+
+</html>

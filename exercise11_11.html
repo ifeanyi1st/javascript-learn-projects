@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>animating Elements</title>
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    #elem {
+      background-color: blue;
+      height: 100px;
+      width: 150px;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="elem">
+
+  </div>
+  <script>
+    let elem = document.getElementById("elem");
+
+
+    let obj = {
+      speed: 10,
+      direction: 1,
+      position: 0
+
+    }
+
+    elem.addEventListener("click", function () {
+      let x = 30;
+      setInterval(function () {
+
+        if (x < 1) {
+          clearInterval()
+        }
+
+        if (obj.position > 800 || obj.position < 0) {
+          obj.direction *= -1;
+        }
+        x--
+
+        obj.position += (obj.speed * obj.direction);
+        elem.style.left = obj.position + "px";
+      }, 20)
+    })
+  </script>
+</body>
+
+</html>

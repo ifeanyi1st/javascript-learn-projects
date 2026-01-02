@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>clickAndChangeColor</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <h1> click to change color</h1>
+  <div id="red">
+    red
+  </div>
+  <div id="blue">
+    blue
+  </div>
+  <div id="green">
+    green
+  </div>
+  <div id="black">
+    black
+  </div>
+  <div id="yellow">
+    yellow
+  </div>
+
+  <script>
+
+    window.onload = function () {
+
+      let red = document.getElementById("red");
+      let blue = document.getElementById("blue");
+      let green = document.getElementById("green");
+      let black = document.getElementById("black");
+      let yellow = document.getElementById("yellow");
+
+      red.addEventListener("click", () => {
+        document.body.style.backgroundColor = `${red.textContent}`;
+
+      })
+      blue.addEventListener("click", () => {
+        document.body.style.backgroundColor = `${blue.textContent}`;
+
+      })
+      green.addEventListener("click", () => {
+        document.body.style.backgroundColor = `${green.textContent}`;
+
+      })
+      black.addEventListener("click", () => {
+        document.body.style.backgroundColor = `${black.textContent}`;
+
+        //document.body.style.color = `white`;
+
+      })
+
+      yellow.addEventListener("click", () => {
+        document.body.style.backgroundColor = `${yellow.textContent}`;
+
+      })
+
+
+    }
+  </script>
+
+</body>
+
+</html>

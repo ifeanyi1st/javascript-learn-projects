@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="output">
+
+  </div>
+  <input type="text" name="message" value="Your message">
+  <button class="btn1">button1</button>
+  <button class="btn2">button2</button>
+  <div>
+    <button class="btn3">Log</button>
+  </div>
+  <script>
+
+    let log = []
+    let div = document.querySelector("div")
+    let input = document.querySelector("input")
+    let btn1 = document.querySelector(".btn1")
+    let btn2 = document.querySelector(".btn2")
+
+    let btn3 = document.querySelector(".btn3")
+
+    function capture(event) {
+
+
+      let eventTarget = event.target;
+
+      let inputValue = input.value;
+
+      let obj = {
+
+        inputValue: inputValue,
+        eventType: event.target.type,
+        className: event.target.className,
+        tagName: event.target.tagName
+
+      }
+      log.push(obj);
+
+      div.textContent = inputValue;
+      //div.textContent = " ";
+
+
+    }
+    btn1.addEventListener("click", (click) => {capture(click)});
+
+    btn2.addEventListener("mouseover", (mouseover) => {capture(mouseover)});
+
+    btn3.addEventListener("click", function () {
+      console.log(log);
+    })
+
+  </script>
+</body>
+
+</html>

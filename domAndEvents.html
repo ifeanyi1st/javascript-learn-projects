@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <script>
+
+    function message(message, event) {
+
+      console.log(event, message);
+    }
+
+    window.onload = function (event) {
+
+      message("Window ready", event)
+    }
+
+
+    function captureDom() {
+      document.addEventListerner("DOMContentLoaded", function (event) {
+        message("Document ready", event)
+      }
+      )
+    }
+    captureDom();
+  </script>
+
+</body>
+
+</html>

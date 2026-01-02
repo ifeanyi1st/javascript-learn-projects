@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="output"></div>
+  <input type="text" placeholder="Enter the Email to check">
+  <button>Check</button>
+
+  <script>
+
+    let input = document.querySelector("input[type='text']")
+    let output = document.querySelector(".output")
+    let button = document.querySelector("button")
+
+    button.addEventListener("click", () => {
+
+      let value = input.value
+      output.textContent = ""
+
+      let test = false
+      let emailFormat = /^([a-z0-9]+@[a-z0-9]+\.[a-z]{2,}$)/i
+
+      if (value.match(emailFormat)) {
+        test = true
+        output.textContent = "Correct"
+        output.style.color = "green"
+      }
+      else {
+        output.textContent = "Wrong Email"
+        output.style.color = "red"
+        input.value = ""
+      }
+
+    })
+  </script>
+</body>
+
+</html>

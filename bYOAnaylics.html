@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="main">
+
+
+    <div id="a" class="box">
+
+    </div>
+    <div id="b" class="box">
+
+    </div>
+    <div id="c" class="box">
+
+    </div>
+    <div id="d " class="box">
+
+    </div>
+  </div>
+
+  <script>
+    let trackingA = []
+
+    let mainContainer = document.querySelector(".main");
+    mainContainer.addEventListener("click", capture)
+
+    function capture(e) {
+      let target = e.target
+      if (target.id == "") {
+        return
+      }
+
+      let obj = {
+        textContent: target.textContent,
+        id: target.id,
+        tagName: target.tagName,
+        className: target.className
+      }
+
+      trackingA.push(obj);
+
+      console.log(trackingA);
+
+    }
+  </script>
+</body>
+
+</html>

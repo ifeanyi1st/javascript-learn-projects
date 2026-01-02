@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>my Friends Table</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="message">
+
+  </div>
+  <div id="output">
+
+  </div>
+
+  <script>
+
+    let arrayOfNames = ["xtinana", "ifeanyi", "obika", "uche"];
+
+    let message = document.getElementById("message");
+    let output = document.getElementById("output");
+
+    function build() {
+
+
+      let html = `<table>`;
+
+      arrayOfNames.forEach((x, y) => {
+
+        html += `<tr data-row="${y}" data-name="${x}"  onclick=getData(this) > 
+   <td > ${x} </td>  <td class="box"> ${y}</td>
+</tr>`;
+
+      })
+      html += `</table>`;
+      output.innerHTML = html;
+    }
+    build()
+
+    function getData(row) {
+      let i = row.getAttribute("data-row");
+      let j = row.getAttribute("data-name");
+
+      message.innerHTML = ` ${i} ${j}`;
+    }
+
+  </script>
+</body>
+
+</html>

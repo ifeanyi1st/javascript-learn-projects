@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manipulating Dom</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <div id="one">
+
+
+  </div>
+
+  <div id="com">
+    <input type="text" id="addItem">
+
+    <input type="button" id="addNew" value="add to list" onclick="addOne()">
+
+
+  </div>
+
+  <div id="the">
+    <h1>Shopping List</h1>
+    <ol id="sList">
+
+    </ol>
+  </div>
+
+  <h4> </h4>
+
+  <script>
+
+    let addItem = document.getElementById("addItem");
+    let mainList = document.getElementById("sList");
+
+    function addOne() {
+
+      let newList = document.createElement("li");
+
+
+      let textNode = document.createTextNode(addItem.value);
+
+
+      newList.appendChild(textNode);
+      mainList.appendChild(newList);
+      addItem.value = " "
+    }
+  </script>
+</body>
+
+</html>

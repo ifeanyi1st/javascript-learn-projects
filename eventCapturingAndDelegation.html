@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>eventCAndDofpageelement</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+  <script>
+
+    let allElement = document.querySelectorAll(".box");
+
+    let mainContainer = document.querySelector(".container");
+
+    mainContainer.addEventListener("click", function () {
+
+      console.log("4");
+      /*if(useCapture){
+        console.log("2")
+      }
+      else{
+        console.log("3")
+      }*/
+    })
+
+    mainContainer.addEventListener("click", function () {
+      console.log("1")
+    }, true)
+
+    allElement.forEach((x) => {
+      x.addEventListener("click", function () {
+        console.log("3")
+        console.log(event.target.textContent);
+      })
+
+      x.addEventListener("click", function () {
+        console.log("2")
+        console.log(event.target.textContent);
+      }, true)
+    })
+  </script>
+</body>
+
+</html>

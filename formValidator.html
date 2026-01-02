@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>formValidator</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <form>
+    <input type="text" name="first" value="">
+    <input type="text" name="last" value="">
+    <input type="text" name="age" value="">
+    <button>submit</button>
+  </form>
+
+  <script>
+    let form = document.querySelector("form");
+
+    function checker(a) {
+      console.log(a.length)
+    }
+
+    form.addEventListener("submit", function (e) {
+      let error = false
+
+
+
+      if (form.first.value === "") {
+        error = true
+        console.log("wrong")
+      }
+      if (form.last.value === "") {
+        error = true
+        console.log()
+      }
+
+      if (isNaN(form.age.value)) {
+        error = true
+      }
+      else if (form.age.value >= 19) {
+        error = true
+      }
+      if (error === true) {
+        e.preventDefault();
+      }
+
+
+    })
+  </script>
+</body>
+
+</html>
